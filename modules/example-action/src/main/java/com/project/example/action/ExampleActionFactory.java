@@ -16,7 +16,7 @@ public class ExampleActionFactory implements ActionFactory {
   }
 
   @Override
-  public Action create(String alias, ActionConfig config, Vertx vertx, Action doAction) {
+  public Action create(ActionConfig config, Vertx vertx) {
     return (fragmentContext, resultHandler) -> {
       Fragment fragment = fragmentContext.getFragment();
       fragment.appendPayload("message", "Hello from example action!");
