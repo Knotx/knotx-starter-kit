@@ -1,4 +1,5 @@
 [![Build Status](https://dev.azure.com/knotx/Knotx/_apis/build/status/Knotx.knotx-starter-kit?branchName=master)](https://dev.azure.com/knotx/Knotx/_build/latest?definitionId=3&branchName=master)
+[![Gradle Status](https://gradleupdate.appspot.com/Knotx/knotx-starter-kit/status.svg)](https://gradleupdate.appspot.com/Knotx/knotx-starter-kit/status)
 
 # Knot.x Starter Kit
 Starter Kit is a template project that simplifies Knot.x project setup. It allows you to 
