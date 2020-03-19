@@ -3,6 +3,9 @@ All notable changes to `knotx-server-http` will be documented in this file.
 
 ## Unreleased
 List of changes that are finished but not yet released in any final version.
+- [PR-31](https://github.com/Knotx/knotx-starter-kit/pull/31) - Knotx/knotx-fragments#135 Extract actions Core & API.
+- [PR-27](https://github.com/Knotx/knotx-starter-kit/pull/27) - Knotx/knotx-fragments#118 Update imports.
+- [PR-24](https://github.com/Knotx/knotx-starter-kit/pull/24) - #15 Update Knot.x version and apply API changes.
 
 ## 2.1.0
 - [PR-18](https://github.com/Knotx/knotx-starter-kit/pull/18) - Apply task & node factories changes.

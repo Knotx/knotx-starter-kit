@@ -5,8 +5,8 @@ import static io.knotx.fragments.api.FragmentResult.SUCCESS_TRANSITION;
 
 import io.knotx.fragments.api.Fragment;
 import io.knotx.fragments.api.FragmentResult;
-import io.knotx.fragments.handler.api.Action;
-import io.knotx.fragments.handler.api.ActionFactory;
+import io.knotx.fragments.action.api.Action;
+import io.knotx.fragments.action.api.ActionFactory;
 
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
