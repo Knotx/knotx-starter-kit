@@ -50,7 +50,7 @@ tasks.register<DockerRemoveImage>("removeImage") {
 tasks.register<DockerBuildImage> ("buildImage") {
     group = "docker"
     inputDir.set(file("$buildDir"))
-    tags.add("${project.property("docker.image.name")}:latest")
+    images.add("${project.property("docker.image.name")}:latest")
     dependsOn("removeImage", "prepareDocker")
 }
 val buildImage = tasks.named<DockerBuildImage>("buildImage")
@@ -61,9 +61,9 @@ tasks.register<DockerCreateContainer>("createContainer") {
     group = "docker-functional-tests"
     dependsOn(buildImage)
     targetImageId(buildImage.get().imageId)
-    portBindings.set(listOf("8092:8092"))
+    hostConfig.portBindings.set(listOf("8092:8092"))
+    hostConfig.autoRemove.set(true)
     exposePorts("tcp", listOf(8092))
-    autoRemove.set(true)
 }
 val createContainer = tasks.named<DockerCreateContainer>("createContainer")
 

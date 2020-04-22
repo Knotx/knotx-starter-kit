@@ -15,6 +15,7 @@
  */
 plugins {
     id("io.knotx.distribution")
+    id("io.knotx.release-base")
     id("com.bmuschko.docker-remote-api")
     id("java")
 }
@@ -53,6 +54,34 @@ tasks.register("build-stack") {
     // https://github.com/Knotx/knotx-gradle-plugins/blob/master/src/main/kotlin/io/knotx/distribution.gradle.kts
     dependsOn("assembleCustomDistribution")
     mustRunAfter("build-docker")
+}
+
+/** Knot.x releasing, can be removed **/
+
+tasks {
+    named<io.knotx.release.common.ProjectVersionUpdateTask>("setVersion") {
+        group = "release prepare"
+        versionParamProperty = "knotx.version"
+        propertyKeyNameInFile = "knotx.version"
+    }
+
+    named("build-docker") {
+        mustRunAfter("setVersion")
+    }
+
+    named("updateChangelog") {
+        dependsOn("build-docker", "setVersion")
+    }
+
+    register("prepare") {
+        group = "release"
+        dependsOn("updateChangelog")
+    }
+
+    register("publishArtifacts") {
+        group = "release"
+        logger.lifecycle("Starter-kit does not publish anything")
+    }
 }
 
 apply(from = "gradle/javaAndUnitTests.gradle.kts")
