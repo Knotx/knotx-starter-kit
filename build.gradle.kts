@@ -61,8 +61,8 @@ tasks.register("build-stack") {
 tasks {
     named<io.knotx.release.common.ProjectVersionUpdateTask>("setVersion") {
         group = "release prepare"
-        versionParamProperty = "knotx.version"
-        propertyKeyNameInFile = "knotx.version"
+        versionParamProperty = "knotxVersion"
+        propertyKeyNameInFile = "knotxVersion"
     }
 
     named("build-docker") {

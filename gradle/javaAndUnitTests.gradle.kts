@@ -38,7 +38,7 @@ allprojects {
             }
 
             dependencies {
-                "testImplementation"(platform("io.knotx:knotx-dependencies:${project.property("knotx.version")}"))
+                "testImplementation"(platform("io.knotx:knotx-dependencies:${project.property("knotxVersion")}"))
                 "testImplementation"("org.junit.jupiter:junit-jupiter-api")
                 "testRuntimeOnly"("org.junit.jupiter:junit-jupiter-engine")
                 "testImplementation"(group = "io.rest-assured", name = "rest-assured", version = "3.3.0")

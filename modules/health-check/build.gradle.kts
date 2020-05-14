@@ -3,9 +3,9 @@ plugins {
 }
 
 dependencies {
-    implementation(platform("io.knotx:knotx-dependencies:${project.property("knotx.version")}"))
+    implementation(platform("io.knotx:knotx-dependencies:${project.property("knotxVersion")}"))
     "io.knotx:knotx".let { v ->
-        implementation("$v-fragments-task-handler:${project.property("knotx.version")}")
+        implementation("$v-fragments-task-handler:${project.property("knotxVersion")}")
     }
     "io.vertx:vertx".let { v ->
         implementation("$v-core")
