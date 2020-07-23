@@ -3,6 +3,7 @@ All notable changes to `knotx-server-http` will be documented in this file.
 
 ## Unreleased
 List of changes that are finished but not yet released in any final version.
+- [PR-41](https://github.com/Knotx/knotx-starter-kit/pull/41) - Remove deprecated Gradle task: `runTest`.
                 
 ## 2.3.0
                 
