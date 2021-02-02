@@ -18,14 +18,19 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 allprojects {
     plugins.withId("java") {
-        tasks.withType<JavaCompile>().configureEach {
-            with(options) {
-                sourceCompatibility = "1.8"
-                targetCompatibility = "1.8"
-                compilerArgs = listOf("-parameters")
-                encoding = "UTF-8"
+        java {
+            toolchain {
+                languageVersion.set(JavaLanguageVersion.of(8))
             }
         }
+//        tasks.withType<JavaCompile>().configureEach {
+//            with(options) {
+//                sourceCompatibility = "1.8"
+//                targetCompatibility = "1.8"
+//                compilerArgs = listOf("-parameters")
+//                encoding = "UTF-8"
+//            }
+//        }
 
         tasks.withType<Test>().configureEach {
             systemProperties(Pair("vertx.logger-delegate-factory-class-name", "io.vertx.core.logging.SLF4JLogDelegateFactory"))
