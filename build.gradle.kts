@@ -32,8 +32,8 @@ allprojects {
     group = "com.project"
 
     repositories {
-        jcenter()
         mavenLocal()
+        mavenCentral()
         maven { url = uri("https://plugins.gradle.org/m2/") }
         maven { url = uri("https://oss.sonatype.org/content/groups/staging/") }
         maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
@@ -43,6 +43,7 @@ allprojects {
         java {
             toolchain {
                 languageVersion.set(JavaLanguageVersion.of(8))
+                vendor.set(JvmVendorSpec.ADOPTOPENJDK)
             }
         }
     }
