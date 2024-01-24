@@ -20,8 +20,6 @@ allprojects {
     plugins.withId("java") {
         tasks.withType<JavaCompile>().configureEach {
             with(options) {
-                sourceCompatibility = "1.8"
-                targetCompatibility = "1.8"
                 compilerArgs = listOf("-parameters")
                 encoding = "UTF-8"
             }
@@ -41,7 +39,7 @@ allprojects {
                 "testImplementation"(platform("io.knotx:knotx-dependencies:${project.property("knotxVersion")}"))
                 "testImplementation"("org.junit.jupiter:junit-jupiter-api")
                 "testRuntimeOnly"("org.junit.jupiter:junit-jupiter-engine")
-                "testImplementation"(group = "io.rest-assured", name = "rest-assured", version = "3.3.0")
+                "testImplementation"(group = "io.rest-assured", name = "rest-assured", version = "5.4.0")
             }
         }
 
